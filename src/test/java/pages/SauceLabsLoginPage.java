@@ -14,7 +14,7 @@ import TestCases.SauceLabsBaseClass;
 
 public class SauceLabsLoginPage {
 	
-WebDriver driver = SauceLabsBaseClass .driver;
+WebDriver driver = SauceLabsBaseClass.driver;
 	
 	/*********Web Elements**********/
 		

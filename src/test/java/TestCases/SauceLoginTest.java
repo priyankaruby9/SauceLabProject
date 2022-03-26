@@ -26,10 +26,9 @@ public class SauceLoginTest extends SauceLabsBaseClass {
 	}
 	
 	@Test
-	public void LoginSuccessTest() throws InterruptedException {
+	public void LoginSuccessTest() {
 		
 		SauceLabsLoginPage login = new SauceLabsLoginPage();
-		Thread.sleep(3000);
 		login.LoginFunction("standard_user", "secret_sauce");
 		//System.out.println("inside successfull");					
 	}

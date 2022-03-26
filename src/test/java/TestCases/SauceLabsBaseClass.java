@@ -7,18 +7,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class SauceLabsBaseClass {
 	
 	public static WebDriver driver;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() {                              
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		//System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 		driver = new ChromeDriver();
 		//driver = new FirefoxDriver();
+		driver.get("https://www.saucedemo.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		
@@ -26,7 +28,7 @@ public class SauceLabsBaseClass {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.get("https://www.saucedemo.com/");		
+				
 		//Thread.sleep(3000);
 	}
 	
